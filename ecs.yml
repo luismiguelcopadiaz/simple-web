@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: The CloudFormation template for the Fargate ECS Cluster.
+Description: Zemoga Cloudformation Template ECS Fargate
 
 Parameters:
   Stage:
@@ -10,7 +10,6 @@ Parameters:
     Type: String
 
 Resources:
-
   # Create an ECS Cluster
   Cluster:
     Type: AWS::ECS::Cluster
@@ -25,7 +24,7 @@ Resources:
       EnableDnsHostnames: True
       EnableDnsSupport: True
 
-  # Create a Subnet
+  # Create a Subnet 1
   SubnetA:
     Type: AWS::EC2::Subnet
     Properties:
@@ -33,7 +32,7 @@ Resources:
       VpcId: !Ref VPC
       AvailabilityZone: !Join ['', [!Ref "AWS::Region", 'a']]
 
-  # Create a Subnet
+  # Create a Subnet 2
   SubnetB:
     Type: AWS::EC2::Subnet
     Properties:
